@@ -14,7 +14,7 @@ from google.cloud import bigquery
 
 plt.style.use('fivethirtyeight')
 
-key_path = "/home/interimassembly2021/instant-bonfire-426101-f8-f306f7226242_(1).json"
+key_path = "/home/interimassembly2021/instant-bonfire-426101-f8-6c5e99d20e7d.json"
 
 
 client = bigquery.Client.from_service_account_json(key_path)
