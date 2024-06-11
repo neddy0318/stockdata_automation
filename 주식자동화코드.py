@@ -1,4 +1,3 @@
-#!apt-get install google-cloud-sdk
 
 import yfinance as yf
 import pandas as pd
