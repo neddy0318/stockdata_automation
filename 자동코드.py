@@ -14,7 +14,9 @@ from google.cloud import bigquery
 
 plt.style.use('fivethirtyeight')
 
+key_path = "/home/interimassembly2021/instant-bonfire-426101-f8-f59bc5ae10d0.json"
 
+client = bigquery.Client.from_service_account_json(key_path)
 
 def sendtogbq(corp_name):
     current_datetime = datetime.now().strftime("%Y-%m-%d")
@@ -61,7 +63,6 @@ def sendtogbq(corp_name):
     plt.legend()
     plt.show()
 
-    client = bigquery.Client()
 
     corp_forecast = corp_forecast[['ds','yhat_lower', 'yhat_upper', 'yhat']]
     corp_pred = pd.merge(corp, corp_forecast, on=['ds'], how='inner')
