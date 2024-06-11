@@ -14,9 +14,9 @@ from google.cloud import bigquery
 
 plt.style.use('fivethirtyeight')
 
-key_path = "/home/interimassembly2021/instant-bonfire-426101-f8-f306f7226242.jason"
+#key_path = "/home/interimassembly2021/instant-bonfire-426101-f8-f306f7226242.jason"
 
-client = bigquery.Client.from_service_account_json(key_path)
+#client = bigquery.Client.from_service_account_json(key_path)
 
 def sendtogbq(corp_name):
     current_datetime = datetime.now().strftime("%Y-%m-%d")
