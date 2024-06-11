@@ -16,7 +16,7 @@ plt.style.use('fivethirtyeight')
 
 
 import os
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "/home/neddy/Desktop/스파르타 코딩클럽/instant-bonfire-426101-f8-f59bc5ae10d0.json"
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "C:\\Users\\neddy\\Desktop\\스파르타 코딩클럽\\instant-bonfire-426101-f8-f59bc5ae10d0.json"
 
 
 def sendtogbq(corp_name):
