@@ -5,19 +5,16 @@ import numpy as np
 from prophet import Prophet
 import matplotlib.pyplot as plt
 from datetime import datetime
-from sklearn.metrics import mean_absolute_error
-from sklearn.metrics import mean_squared_error
+from sklearn.metrics import mean_absolute_error, mean_squared_error
 import matplotlib.pyplot as plt
 from pandas.tseries.offsets import BDay #주식 예측 시평일만 카운트 해주기 위함
-from google.oauth2 import service_account
-from google.cloud import bigquery
+#from google.oauth2 import service_account
+#from google.cloud import bigquery
 
 plt.style.use('fivethirtyeight')
 
-key_path = "/home/interimassembly2021/instant-bonfire-426101-f8-6c5e99d20e7d.json"
-
-
-client = bigquery.Client.from_service_account_json(key_path)
+#key_path = "/home/interimassembly2021/instant-bonfire-426101-f8-6c5e99d20e7d.json"
+#client = bigquery.Client.from_service_account_json(key_path)
 
 #주가 예측& 빅쿼리 연동 함수
 def sendtogbq(corp_name):
@@ -75,9 +72,6 @@ def sendtogbq(corp_name):
   plt.title('Predictability Test')
   plt.legend()
   plt.show()
-
-
-  client = bigquery.Client()
 
 
   # yfinance 데이터와 예측값 데이터 통합
