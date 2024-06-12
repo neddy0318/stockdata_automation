@@ -46,8 +46,6 @@ def sendtogbq(corp_name):
   corp_forecast['exclude_weekend'] = corp_forecast['ds'] + BDay(0)
   corp_forecast = corp_forecast[corp_forecast['ds'].dt.weekday < 5]
   corp_forecast = model_prophet.predict(corp_forecast)
-  model_prophet.plot(corp_forecast, xlabel = 'Date', ylabel= 'adj price($)')
-  plt.show()
 
   
   client = bigquery.Client()
@@ -69,13 +67,6 @@ def sendtogbq(corp_name):
   rmse = np.sqrt(mse)
   print('RMSE: %.3f' % rmse)
 
-  plt.plot(y_true, label='Actual')
-  plt.plot(y_pred, label='Predicted')
-  plt.title('Predictability Test')
-  plt.legend()
-  plt.show()
-
-
   # yfinance 데이터와 예측값 데이터 통합
   corp_forecast = corp_forecast[['ds','yhat_lower', 'yhat_upper', 'yhat']]
 
@@ -96,11 +87,5 @@ def sendtogbq(corp_name):
 
 
 
-  #예측 전체 테이블 : 확인용
-  return corp_pred
-
-
-
 
 sendtogbq('MSFT')
-sendtogbp('AAPL')
