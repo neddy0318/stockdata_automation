@@ -9,7 +9,7 @@ from sklearn.metrics import mean_absolute_error, mean_squared_error
 import matplotlib.pyplot as plt
 from pandas.tseries.offsets import BDay #주식 예측 시평일만 카운트 해주기 위함
 #from google.oauth2 import service_account
-#from google.cloud import bigquery
+from google.cloud import bigquery
 
 plt.style.use('fivethirtyeight')
 
@@ -49,7 +49,9 @@ def sendtogbq(corp_name):
   model_prophet.plot(corp_forecast, xlabel = 'Date', ylabel= 'adj price($)')
   plt.show()
 
-
+  
+  client = bigquery.Client()
+  
   #예측력 테스트
   corp_test = corp[-251:]
 
