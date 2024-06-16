@@ -10,10 +10,13 @@ import matplotlib.pyplot as plt
 from pandas.tseries.offsets import BDay #주식 예측 시평일만 카운트 해주기 위함
 #from google.oauth2 import service_account
 from google.cloud import bigquery
+import os
 
 plt.style.use('fivethirtyeight')
 
-#key_path = "/home/interimassembly2021/instant-bonfire-426101-f8-6c5e99d20e7d.json"
+os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = "/home/interimassembly2021/instant-bonfire-426101-f8-6c5e99d20e7d.json"
+
+
 #client = bigquery.Client.from_service_account_json(key_path)
 
 #주가 예측& 빅쿼리 연동 함수
