@@ -76,7 +76,7 @@ def sendtogbq(corp_name):
   corp_pred = pd.merge(corp,corp_forecast, on=['ds'], how = 'inner')
   corp_pred = corp_pred.sort_values(by='ds')
 
-  table_id = 'strange-terra-415002.practical_project.' + corp_name          #corp_name따라 테이블 만들기
+  table_id = 'instant-bonfire-426101-f8.practical_project.' + corp_name          #corp_name따라 테이블 만들기
   pandas_gbq.to_gbq(corp_pred, table_id, project_id='strange-terra-415002', if_exists='append') #project에 추가
   #이미 데이터가 있을 경우 추가(실전 프로젝트 할 시에는 중복데이터 처리법을 몰랐었고, 태블로 연동시에 태블로에서는 중복 데이터를 알아서 필터링해줬었던 지라......일단 'append'로 설정했습니다)
 
